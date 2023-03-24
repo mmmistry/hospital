@@ -1,4 +1,4 @@
-# Now Medical Front End:
+# Hospital Management:
 
 ```bash
 yarn install
