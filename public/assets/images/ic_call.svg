@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="ic_call" transform="translate(-172 -2828)">
+    <path id="Icon_ionic-ios-checkmark-circle" data-name="Icon ionic-ios-checkmark-circle" d="M23.375,3.375a20,20,0,1,0,20,20A20,20,0,0,0,23.375,3.375ZM20.76,30.76Z" transform="translate(168.625 2824.625)" fill="#0fc1a7"/>
+    <g id="Group_66" data-name="Group 66" transform="translate(177 2832)">
+      <path id="Path_51" data-name="Path 51" d="M0,0H31.011V31.011H0Z" fill="none"/>
+      <path id="Path_52" data-name="Path 52" d="M5.45,4h4.9l2.45,6.126L9.739,11.964a13.477,13.477,0,0,0,6.126,6.126L17.7,15.027l6.126,2.45v4.9a2.45,2.45,0,0,1-2.45,2.45A19.6,19.6,0,0,1,3,6.45,2.45,2.45,0,0,1,5.45,4" transform="translate(0.676 2.507)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

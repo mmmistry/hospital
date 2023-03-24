@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('slick-carousel/slick/slick.css');
+@import url('slick-carousel/slick/slick-theme.css');
+:root{
+    --interFont: 'Inter', sans-serif;
+    --playfairDisplayFont: 'Playfair Display', serif;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html, body{
+        @apply h-full;
+     }
+    body {
+        // font-family: var(--font-inter);
+        font-family: var(--interFont);
+        @apply text-darkgray;
+        @apply flex;
+         @apply flex-col;
+    }
+}
+@layer components {
+    .playfair-font {
+        font-family: var(--playfairDisplayFont);
+    }
+    .full-w-btn{
+        .primary-buttons{
+            @apply w-full;
+        }
+    }
+    .form-check{
+        @apply relative;
+        .form-check-input{
+            @apply w-full;
+            @apply h-full;
+            @apply absolute;
+            @apply opacity-0;
+            &:checked {
+                @apply bg-secondary;
+                @apply border-secondary;
+            }
+        }
+        .form-check-label{
+            @apply cursor-pointer;
+            @apply relative;
+            @apply pl-6;
+            &::before{
+                content: "";
+                @apply absolute;
+                @apply left-0;
+                @apply rounded;
+                @apply border-2;
+                @apply border-black;
+                @apply w-4;
+                @apply h-4;
+                @apply mt-1;
+                @apply shadow-none;
+                @apply bg-transparent;
+                @apply bg-contain;
+                @apply bg-no-repeat;
+                @apply bg-center;
+            }
+        }
+        .form-check-input{
+            &:checked + {
+                .form-check-label{
+                    &::before{
+                        @apply bg-secondary;
+                        @apply border-secondary;
+                        @apply bg-checkbox;
+                    }
+                }
+            }
+        }
+    }
+    .custom-scrollbar{
+        scrollbar-width: auto;
+        scrollbar-color: #8f54a0 #ffffff;
+        &::-webkit-scrollbar {
+            @apply w-2;
+        }
+        &::-webkit-scrollbar-track {
+            @apply bg-white;
+        }
+        &::-webkit-scrollbar-thumb {
+            @apply bg-midlglightgray;
+            @apply rounded-10;
+            @apply border-4;
+            @apply border-white;
+        }
+    }
+}
+@media screen and (max-width: 1024px){
+    .close-ic{
+        @apply hidden;
+    }
+    .collaps-menu{
+        @apply fixed;
+        @apply translate-x-full;
+        @apply right-0;
+        @apply top-0;
+        @apply transition-all;
+        @apply bg-white;
+        @apply shadow-lg;
+        @apply h-full;
+        @apply w-72;
+        @apply p-4;
+        &.hideMenu{
+            .close-ic{
+                @apply hidden;
+            }
+        }
+        &.menuShow{
+            @apply translate-x-0;
+            .close-ic{
+                @apply block
+            }
+            .bar-ic{
+                @apply hidden;
+            }
+        }
+    }
+}
+.searchBarSection{margin-top: -30px;}
+.commonTitleBorder{
+    @apply relative;
+    @apply pl-4;
+    @apply py-3;
+    &:before{
+        content: "";
+        @apply absolute;
+        @apply left-0;
+        @apply top-0;
+        @apply h-full;
+        @apply w-1.5;
+        @apply bg-secondary;
+    }
+}
+.slick-slide{
+    @apply px-2;
+}
+.servicesMatchBlock{
+    &:hover{
+        .servicesMatchBlock-img{
+            background-color: #FFFFFF69 !important;
+            img{
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+}
+.findDetails-box{
+    &::before{
+        content: "";
+        @apply absolute;
+        @apply left-5;
+        @apply top-0;
+        @apply h-full;
+        @apply border-2;
+        @apply border-dashed;
+        @apply border-lightgray;
+        @apply w-px;
+
+    }
+    &:last-child{
+        &::before{
+            @apply hidden;
+        }
+    }
+}
+.appuserImage{
+    margin-top: -100px;
+}
+.testimonialSlider{
+    .slick-dots{
+        li{
+            button{
+                @apply w-3;
+                @apply h-3;
+                @apply rounded-full;
+                @apply bg-midlightgray;
+                @apply z-10;
+                font-size: 0;
+                &::before{
+                 @apply hidden;
+                }
+            }
+            &.slick-active{
+                button{
+                    @apply bg-secondary;
+                }
+            }
+        }
+        left: 3%;
+        right: inherit;
+        bottom: 10px;
+        @media screen and (max-width: 1280px){
+            left: 0;
+            bottom: -50px;
+        }
+    }
+}
+.intelInput {
+    .iti  {
+        @apply w-full;
+        .iti--separate-dial-code {
+            .iti__selected-flag{
+                @apply bg-transparent;
+                @apply text-semilightgray;
+                @apply border-r-2;
+                @apply border-semilightgray;
+            }
+        }
+        .inputIntel{
+            padding-left: 100px !important;
+        }
+    }
+    &> .iti  {
+        &> .iti__flag-container{
+             @apply hidden;
+         }
+     }
+     
+}
+.main-body{
+    @apply bg-secondaryLight;
+    padding-top: 82px;
+    .app-main{
+        padding: 20px 20px;
+        @media screen and (max-width: 1024px) {
+            padding: 20px 15px;
+        }
+    }
+}
+.sidebar{
+    padding-top: 102px;
+    .sidebar-menu{
+        .sidebar-menu-links{
+            @apply border-l-4;
+            @apply border-transparent;
+            img{
+                filter: brightness(0);
+            }
+        }
+        &.sidebar-menu-active{
+            @apply bg-white;
+            box-shadow: 0px 0px 10px #0000000F;
+            border-radius: 0px 4px 4px 0px;
+            .sidebar-menu-links{
+                @apply border-l-4;
+                @apply border-secondary;
+                @apply text-secondary;
+                img{
+                    filter: brightness(1);
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1024px){
+            @apply z-20;
+            @apply pt-0;
+            @apply fixed;
+            @apply -translate-x-full;
+            @apply left-0;
+            @apply top-0;
+            @apply transition-all;
+            @apply bg-white;
+            @apply shadow-lg;
+            @apply h-full;
+            @apply w-72;
+            @apply p-4;
+            &.sidebarMenuShow{
+                @apply translate-x-0;
+                .bar-ic{
+                    @apply hidden;
+                }
+                .close-ic {
+                    @apply block;
+                }
+            }
+    }
+}
+.registration-stepWizard{
+    .rsw_2f{
+        @apply hidden;
+    }
+    .rsw_3G{
+        @apply block;
+    }
+    .setpWizard-tabs{
+        .setpWizard-items{
+            .setpWizard-menu{
+                @apply relative;
+                @apply pr-8;
+                @apply 2xl:pr-12;
+                &::before{
+                    content: "";
+                    @apply absolute;
+                    @apply right-0;
+                    @apply w-6;
+                    @apply 2xl:w-10;
+                    @apply h-0.5;
+                    @apply bg-semilightgray;
+                }
+                &.active{
+                    &::before{
+                        @apply bg-secondary;  
+                    }
+                    .setp_name{
+                      @apply text-darkgray;
+                    }
+                    svg{
+                        @apply bg-secondary;
+                    }
+                }
+            }
+            &:last-child{
+                .setpWizard-menu{
+                    &::before{
+                        @apply hidden;
+                    }
+                    @apply pr-0;
+                }
+            }
+        }
+    }
+}
+.datePicker_custom {
+    .react-date-picker__wrapper {
+       @apply w-full;
+       @apply  outline-0 ;
+       @apply  rounded ;
+       @apply  pl-4 ;
+       @apply  h-12 ;
+       @apply border-2 ;
+       @apply  border-midextralightgray ;
+       @apply transition-all ;
+       @apply focus:border-secondary;
+       @apply text-black;
+      .react-date-picker__inputGroup__input {
+        @apply  outline-0 ;
+      }
+    }
+    .react-calendar {
+      @apply rounded-10;
+      @apply shadow-lg;
+      @apply border;
+      @apply border-semilightgray;
+      .react-calendar__year-view .react-calendar__tile,
+      .react-calendar__decade-view .react-calendar__tile,
+      .react-calendar__century-view .react-calendar__tile {
+        padding: 1em 0.5em;
+      }
+      .react-calendar__tile--active {
+            @apply bg-secondary;
+            color: white;
+       }
+    }
+}
+.customCunltCheckbox{
+        .checkboxCunltInput {
+           &:checked + {
+             .checkboxCunltLabel{
+                @apply bg-secondary;
+                @apply text-white;
+                svg{
+                    filter: brightness(0) invert(1);
+                }
+             }
+           }
+        }
+}
+.customMultiSelect{
+    .react-dropdown-select{
+        .react-dropdown-select-option{
+            @apply bg-secondaryLgLight;
+            @apply text-secondary;
+            @apply rounded-xl;
+            @apply text-sm;
+            @apply font-medium;
+            @apply px-2;
+            @apply py-1;
+        }
+    }
+    .react-dropdown-select-dropdown{
+        @apply max-w-full;
+        .react-dropdown-select-item{
+            @apply text-sm;
+            @apply font-medium;
+            &.react-dropdown-select-item-selected{
+                @apply bg-secondary;
+                @apply text-white;
+            }
+            &:hover{
+                @apply bg-secondaryLgLight;
+                @apply text-secondary;
+            }
+        }
+    }
+}
+.inputError{color: red;}
+.hfl-screen{height: 100vh;}
+.star-rating{
+    button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+      .on {
+        .fillIcn{
+            fill: #ecd500;
+            stroke: #ecd500;
+        }
+      }
+      .off {
+        .fillIcn{
+            fill: #c1c1c1;
+            stroke: #c1c1c1;
+        }
+      }
+}
